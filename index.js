@@ -9,7 +9,7 @@ import OrderRoute from "./Routes/OrderData.js";
 
 dotenv.config()
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // app.use((req, res, next) => {
 //   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -35,7 +35,7 @@ mongoose
   .then(() =>
     app.listen(PORT, () => {
       console.log(
-        `\nExpress App Running in port ${process.env.PORT}...\n>> database connected..`
+        `\nExpress App Running in port ${PORT}...\n>> database connected..`
       );
     })
   )
